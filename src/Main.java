@@ -10,7 +10,8 @@ public class Main {
                 "4 - Método Teste p5 e p6 Questão 3.21.\n" +
                 "5 - Método Teste JOptionPane único.\n" +
                 "6 - Método Teste JOptionPane múltiplo.\n" +
-                "7 - Método Teste ArrayList.\n"
+                "7 - Método Teste ArrayList.\n" +
+                "8 - Método Teste Conjunto.\n"
         ));
         while (opcao != 0) {
             switch (opcao) {
@@ -34,6 +35,9 @@ public class Main {
                     break;
                 case 7:
                     new Main().testeArrayList();
+                    break;
+                case 8:
+                    new Main().testConjunto();
                     break;
                 default:
                     System.out.println("Opção inválida");
@@ -187,6 +191,38 @@ public class Main {
         for (Ponto ponto : pontos) {
             JOptionPane.showMessageDialog(null, ponto.toString());
         }
+        main(null);
+    }
+
+    public void testConjunto() {
+        System.out.println("Início da tarefa de testes do Conjunto.");
+
+        Ponto p1 = new Ponto();
+        Conjunto c1 = new Conjunto(1, "c1");
+
+        p1.imprimirCoordenadas();
+        p1.incrementarCoordenadas(5, 2);
+
+        c1.adicionarPonto(p1);
+        p1.imprimirCoordenadas();
+        p1.incrementarCoordenadas(5, 2);
+        p1.zerarCoordenadas();
+        p1.imprimirCoordenadas();
+
+        Ponto p2 = new Ponto();
+        p2.imprimirCoordenadas();
+        p2.incrementarCoordenadas(6, 9);
+
+        p2.imprimirCoordenadas();
+        p2.incrementarCoordenadas(5, 2);
+        p2.imprimirCoordenadas();
+        p2.zerarCoordenadas();
+
+        c1.adicionarPonto(p1);
+        c1.listarPontos();
+        c1.excluirPonto(p2);
+        c1.listarPontos();
+        System.out.println("Fim da tarefa de testes do Conjunto.");
         main(null);
     }
 }
